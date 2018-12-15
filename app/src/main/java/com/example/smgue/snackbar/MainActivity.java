@@ -1,5 +1,6 @@
 package com.example.smgue.snackbar;
 
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -7,6 +8,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.Toast;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -19,6 +21,16 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         rootLayout = findViewById(R.id.myLayout);
+
+        FloatingActionButton fab = findViewById(R.id.fab);
+
+//        Add on click listener to the floating action button.
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(rootLayout, "Simple Snack Bar Example", Snackbar.LENGTH_LONG).show();
+            }
+        });
 
         Toolbar toolbar = findViewById(R.id.myToolbar);
         toolbar.setTitle("Basic Components");
